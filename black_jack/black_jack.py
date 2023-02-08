@@ -3,7 +3,7 @@ import random
 print(logo)
 your_card = []
 dealer_card = []
-
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 def deal_card(your,dealer):
     while your >= 1:
         your_card.append(random.choice(cards))
@@ -11,11 +11,9 @@ def deal_card(your,dealer):
     while dealer >=1:
         dealer_card.append(random.choice(cards))
         dealer-=1
-    # print(f"Your cards are : {your_card}")
-    # print(f"Dealers cards are : {dealer_card}")
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-def start_game():
-    end_game = False
+
+ 
+def start_game(end_game):
     while end_game == False:
         deal_card(your=2,dealer=2)
         print(f"Cards you got : {your_card}, Your score is {sum(your_card)}")
@@ -31,23 +29,29 @@ def start_game():
             print("You win")
             print(f"Your score is : {sum(your_card)}")
             print(f"Dealers score is : {sum(dealer_card)}")
-        elif(sum(your_card) < sum(dealer_card) and sum(dealer_card) <= 21) or (sum(your_card) > sum(dealer_card) and sum(dealer_card) <= 21):
+            your_card.clear()
+            dealer_card.clear()
+        elif(sum(your_card) < sum(dealer_card) and sum(dealer_card) <= 21) or (sum(your_card) > sum(dealer_card) and sum(dealer_card) <= 21) or (sum(your_card) > 21):
             print("You lose")
             print(f"Your score is : {sum(your_card)}")
             print(f"Dealers score is : {sum(dealer_card)}")
+            your_card.clear()
+            dealer_card.clear()
         elif sum(your_card) == sum(dealer_card):
             print("Draw")
             print(f"Your score is : {sum(your_card)}")
             print(f"Dealers score is : {sum(dealer_card)}")
 
-        option = input("press c to continue the game ,press q to quit, press y to restart the game : ").lower()  
-        if option == "q":
+        option = input("press c to continue the game ,press q to quit, press y to restart the game : ") 
+        if option.lower() == "q":
             end_game = True
-        elif option == "y":
+            break
+        elif option.lower() == "y":
             your_card.clear()
             dealer_card.clear()
-            start_game()
+            start_game(False)
         else:
             print(f"Invalid option {option}")
+    end_game = True
 
-start_game()
+start_game(False)

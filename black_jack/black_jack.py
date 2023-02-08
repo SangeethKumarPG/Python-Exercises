@@ -18,6 +18,10 @@ def start_game(end_game):
         deal_card(your=2,dealer=2)
         print(f"Cards you got : {your_card}, Your score is {sum(your_card)}")
         print(f"Cards that computer got : [{dealer_card[0]},?]")
+        if sum(your_card) == 21 and len(your_card) == 2:
+            your_card.clear()
+        if sum(dealer_card) == 21 and len(dealer_card) == 2:
+            dealer_card.clear()
         while sum(dealer_card) < 17:
             deal_card(your=0,dealer=1)
         if input("Press y to hit again, press any other key to stand : ").lower() == "y":

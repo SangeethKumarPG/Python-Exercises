@@ -1,47 +1,53 @@
 from art import *
+from game_data import data
 import random
-print(logo)
-#list in dicionary
+import os
 
-item_list = [
-    {"apple": 1000000},
-    {"cat videoes": 1500000},
-    {"sunny leone" : 2000000},
-    {"fake news": 450000},
-    {"Chadwick Boseman": 3000000},
-    {"Narendra Modi": 2500000},
-    {"Edappal":2500},
-    {"Lulu Mall":30000},
-    {"Pinarayi":100000},
-    {"Sony":150000}
-]
+score = 0
+
 def high_or_low(first_choice, second_choice):
     if first_choice != second_choice:
-        for item in first_choice:
-            print(f"First choice : {item}")
-        for item_2 in second_choice:
-            print(f"Second item : {item_2}")
-        print("Press a for higher b for lower : ")
+        print(logo)
+        print(f"Your current score is {score}")
+        print(f"Comapare A: {first_choice['name']} a {first_choice['description']} , from {first_choice['country']}")
+        print(vs)
+        print(f"Against B: {second_choice['name']} a {second_choice['description']} , from {second_choice['country']}")
         option = input()
         if option == 'a':
-            if first_choice[item] > second_choice[item_2]:
+            if first_choice['follower_count'] > second_choice['follower_count']:
                 print(f"Correct")
                 return 1
             else:
                 print("Incorrect")
                 return 0
         elif option == "b":
-            if first_choice[item] < second_choice[item_2]:
+            if first_choice['follower_count'] < second_choice['follower_count']:
                 print(f"Correct")
                 return 1
             else:
                 print("Incorrect")
                 return 0
+    else:
+        return 2
+            
+end_game = False
+first_choice = random.choice(data)
+second_choice = random.choice(data)
+while end_game != True:
+    # for item in first_choice:
+    #     print(f"First choice : {item}")
+    result = high_or_low(first_choice, second_choice)
+    if result == 0:
+        print(f"Your score is {score}.better luck next time ")
+        end_game = True
+    elif result == 1:
+        score += 1
+        first_choice = second_choice
+        second_choice = random.choice(data)
+        os.system('clear')
+    elif result == 2:
+        first_choice = random.choice(data)
+        second_choice = random.choice(data)
 
-first_choice = random.choice(item_list)
-second_choice = random.choice(item_list)
-# for item in first_choice:
-#     print(f"First choice : {item}")
 
-
-high_or_low(first_choice, second_choice)
+    

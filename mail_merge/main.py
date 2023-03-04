@@ -21,7 +21,7 @@ for string in content:
     final_letter_content += string
 
 for name in names:
-    data = open(f"mail_merge/Output/ReadyToSend/letter_for_{name.strip()}", mode="w")
+    data = open(f"mail_merge/Output/ReadyToSend/letter_for_{name.strip()}.txt", mode="w")
     names_changed_content = final_letter_content.replace("[name]",f"{name.strip()}")
     data.write(names_changed_content)
     data.close()

@@ -15,6 +15,7 @@ class Snake:
     def create_snake(self):
         for i in range(-40,1,20):
             self.create_segment((i,0))
+            
 
 
     def extend(self):
@@ -57,3 +58,9 @@ class Snake:
         if self.head.heading() != LEFT:
             self.head.setheading(0)
         # self.move()
+
+    def reset(self):
+        for segment in self.pieces_of_snake:
+            segment.goto(1000,1000)
+        self.__init__()
+

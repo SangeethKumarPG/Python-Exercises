@@ -10,11 +10,8 @@
 with open("mail_merge/Input/Names/invited_names.txt") as data:
     names = data.readlines()
 
-
 with open("mail_merge/Input/Letters/starting_letter.txt") as letter:
     content = letter.readlines()
-
-
 
 final_letter_content = ""
 for string in content:

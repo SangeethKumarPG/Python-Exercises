@@ -35,10 +35,10 @@ while True:
         pointer.goto(x_cor, y_cor)
         pointer.write(arg=f"{answer_state}", font=("Courier",10,"normal"))
 
-states_to_learn = []
-for state_name in state_list:
-    if state_name not in guessed_list:
-        states_to_learn.append(state_name)
+states_to_learn = [state_name for state_name in state_list if state_name not in guessed_list]
+# for state_name in state_list:
+#     if state_name not in guessed_list:
+#         states_to_learn.append(state_name)
 
 # print(states_to_learn)
 state_dict = {

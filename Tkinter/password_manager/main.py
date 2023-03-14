@@ -21,15 +21,6 @@ def generate_password():
     password_list += [random.choice(numbers) for _ in range(nr_numbers)]
     password_list += [random.choice(symbols) for _ in range(nr_symbols)]
 
-    # for char in range(nr_letters):
-    #   password_list.append(random.choice(letters))
-
-    # for char in range(nr_symbols):
-    #   password_list += random.choice(symbols)
-
-    # for char in range(nr_numbers):
-    #   password_list += random.choice(numbers)
-
     random.shuffle(password_list)
 
     password = "".join(password_list)
@@ -109,22 +100,6 @@ generate_password_button.grid(row=3, column=2)
 add_button = Button(text="Add", width=31, padx=5, pady=5, highlightthickness=0, bd=0, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 
-#binding click event for text fields
-# def focus_website_field(event):
-#     website_url_entry.focus_set()
-
-
-# def focus_username_entry(event):
-#     username_entry.focus_set()
-
-# def focus_password_entry(event):
-#     password_entry.focus_set()
-
-
-
-# website_url_entry.bind("<1>",focus_website_field)
-# username_entry.bind("<1>", focus_username_entry)
-# password_entry.bind("<1>", focus_password_entry)
 
 
 window.mainloop()

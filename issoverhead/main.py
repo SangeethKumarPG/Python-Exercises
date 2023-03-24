@@ -34,7 +34,7 @@ def is_iss_over_me(lat, lng):
 def send_email_notification():
     with smtplib.SMTP(host="smtp.gmail.com", port=587) as connection:
         connection.starttls()
-        connection.login(user="sangeeth695@gmail.com", password="omkkonvlcfzdbnvo")
+        connection.login(user="sangeeth695@gmail.com", password="")
         connection.sendmail(from_addr="sangeeth695@gmail.com", to_addrs="pgsangeethkumar@gmail.com", msg="Subject:Look Up!!! ISS is near you!\n\n Dear Sangeeth, The ISS is above you")
 
 

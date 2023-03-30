@@ -1,5 +1,5 @@
 import requests
-
+# import json
 
 # import os
 
@@ -11,10 +11,13 @@ MY_LONG = 76.007988
 
 test_lat = 30.733299
 test_lon = 79.066902
+
+new_lat = 10.228370
+new_lon = 76.198799
 parameters = {
     
-    "lat" : test_lat,
-    "lon" : test_lon,
+    "lat" : new_lat,
+    "lon" : new_lon,
     "units" : "metric",
     "exclude" :"current,minutely,daily" ,
     "appid" : "d3f37269fcf467441dba03d672e5c493"
@@ -35,8 +38,12 @@ def send_message(bot_message):
 one_call_api_url = "https://api.openweathermap.org/data/2.8/onecall?"
 weather_api_url = "https://api.openweathermap.org/data/2.5/weather?"
 response = requests.get(url=one_call_api_url, params=parameters)
+
 response.raise_for_status()
 json_data = response.json()
+
+# with open("weather_data_dump.json","w") as json_file:
+#     json.dump(json_data,json_file,indent=2)
 
 
 hourly_weather_list = json_data.get("hourly")

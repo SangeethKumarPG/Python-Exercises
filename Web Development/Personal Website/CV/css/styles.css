@@ -1,0 +1,20 @@
+body{
+    background-color: #F3DEBA;
+}
+img{
+    border-radius: 120px;
+}
+hr{
+    /* background-color:white;
+    border-style: dotted;
+    height: 2px;*/
+    width: 5%;
+    border: 10px dotted #675D50;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    /* list-style: dotted; */
+}
+h1,h2,h3{
+    color: #A9907E;
+}

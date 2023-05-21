@@ -1,0 +1,74 @@
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.display-5{
+  font-size: calc(1.425rem + 2.1vw);
+  width: 380px;
+}
+
+.px-5{
+  padding-left: 8rem !important;
+  padding-right : 8rem !important; 
+  margin-top: 10rem !important;
+}
+
+.iphone-img{
+  padding-top: 3rem !important;
+  padding-left: 5rem !important;
+  margin-left: 3rem !important;
+  padding-right: 5rem !important;
+}
+
+#testimonial{
+  background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+}
+
+#dog-thumbnail{
+  border-radius: 50px !important;
+}
+
+#footer{
+  border-bottom: 0px !important;
+  min-height: 50vh !important;
+}
+
+#features{
+  margin-top: 10px;
+}
+.icon-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: .75rem;
+}
+
+

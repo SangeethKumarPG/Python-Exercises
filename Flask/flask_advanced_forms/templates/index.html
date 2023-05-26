@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}
+	Index
+{%endblock%}
+{% block styling %}
+	{{super()}}
+{%endblock%}
+{% block content%}
+{% from 'bootstrap5/form.html' import render_form %}
+<div class="mt-4 p-5 bg-info rounded">
+	<div class="container">
+		<h1>Welcome</h1>
+		<p>Are you ready to discover my secret?</p>
+		<form method="GET" action="{{url_for('login')}}" novalidate>
+			<button class="btn btn-primary btn-lg" href="{{ url_for('login') }}">Login</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
+{% block js_scripts%}
+	{{super()}}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Movie{% endblock %}
+{% block styling %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="content">
+  {% from 'bootstrap5/form.html' import render_form  %}
+    <h1 class="heading">Add a Movie</h1>
+  {{render_form(form,novalidate=True, action=url_for('add'), method='POST')}}
+
+</div>
+{% endblock %}

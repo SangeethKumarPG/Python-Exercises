@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form  %}
+{% block title %}Select Movie{% endblock %}
+{% block styling %}
+{{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+    <h1 class="heading">Select Movie</h1>
+  {% for result in results %}  
+  <p>
+    <a href="{{url_for('select',id=result.get('id'))}}"> {{result.get('title')}} - {{result.get('release_date')}}</a>
+  </p>
+  {% endfor %}
+</div>
+{% endblock %}
+{% block js_scripts%}
+    {{super()}}
+{% endblock %}
